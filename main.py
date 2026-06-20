@@ -1,11 +1,10 @@
-print("Sentiment Analysis Project Setup Successful!")
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-# Sample dataset (replace with IMDB reviews later)
+# Sample dataset
 data = {
     'text': ["I love this movie", "I hate this film", "Amazing storyline", "Terrible acting"],
     'label': [1, 0, 1, 0]  # 1 = positive, 0 = negative
