@@ -1,4 +1,4 @@
-"""Prediction utilities for the sentiment analysis model."""
+
 
 import pickle
 import re
@@ -35,14 +35,7 @@ NEGATION_PATTERNS = (
 
 
 def load_pickle_file(file_path):
-    """Load a Python object from a pickle file.
-
-    Args:
-        file_path (str): Path to the pickle file.
-
-    Returns:
-        object: Loaded Python object.
-    """
+  
     with open(file_path, "rb") as file:
         return pickle.load(file)
 
@@ -65,7 +58,7 @@ def has_negative_phrase(text):
 
 
 def has_low_rating(text):
-    """Check whether text mentions a clearly low rating."""
+  
     normalized_text = text.lower()
     rating_patterns = (
         r"(?:rating it|rating|rated)\s*(\d+)",
@@ -85,15 +78,7 @@ vectorizer = load_pickle_file(VECTORIZER_PATH)
 
 
 def predict_sentiment(text):
-    """Predict the sentiment of a text review.
-
-    Args:
-        text (str): Review text to classify.
-
-    Returns:
-        str: "positive" or "negative" sentiment label. Returns "negative"
-        for empty or invalid text.
-    """
+   
     if not isinstance(text, str) or not text.strip():
         return "negative"
 
