@@ -1,4 +1,4 @@
-"""Train and save the sentiment analysis model."""
+
 
 import os
 import pickle
@@ -19,14 +19,7 @@ VECTORIZER_PATH = os.path.join(MODEL_DIR, "vectorizer.pkl")
 
 
 def prepare_data(dataframe):
-    """Clean reviews and convert sentiment labels into numeric values.
-
-    Args:
-        dataframe (pandas.DataFrame): Dataset with review and sentiment columns.
-
-    Returns:
-        tuple: Cleaned review text and numeric sentiment labels.
-    """
+   
     reviews = dataframe["review"].apply(clean_text)
     labels = dataframe["sentiment"].map({"positive": 1, "negative": 0})
 
@@ -34,18 +27,13 @@ def prepare_data(dataframe):
 
 
 def save_pickle_file(data, file_path):
-    """Save data to a pickle file.
-
-    Args:
-        data: Python object to save.
-        file_path (str): Destination path for the pickle file.
-    """
+    
     with open(file_path, "wb") as file:
         pickle.dump(data, file)
 
 
 def train_model():
-    """Train the sentiment analysis model and save model artifacts."""
+    
     dataframe = load_data(DATA_PATH)
     reviews, labels = prepare_data(dataframe)
 
