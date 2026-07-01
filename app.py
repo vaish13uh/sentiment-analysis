@@ -123,10 +123,6 @@ st.markdown(
         color: #111111;
         font-weight: 800;
     }
-
-    .stCaptionContainer, .stCaptionContainer p {
-        color: #a99bc4;
-    }
     </style>
     """,
     unsafe_allow_html=True,
