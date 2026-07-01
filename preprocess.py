@@ -1,4 +1,4 @@
-"""Text preprocessing utilities for sentiment analysis."""
+
 
 import re
 import string
@@ -33,7 +33,7 @@ NEGATION_WORDS = {
 
 
 def _load_stopwords():
-    """Load English stopwords, downloading them only when needed."""
+   
     try:
         english_stopwords = set(stopwords.words("english"))
     except LookupError:
@@ -44,7 +44,7 @@ def _load_stopwords():
 
 
 def _get_stopwords():
-    """Return cached English stopwords."""
+    
     global STOPWORDS
 
     if STOPWORDS is None:
@@ -54,14 +54,7 @@ def _get_stopwords():
 
 
 def clean_text(text):
-    """Clean raw review text for sentiment analysis.
-
-    Args:
-        text (str): Raw text to clean.
-
-    Returns:
-        str: Cleaned text, or an empty string for non-string inputs.
-    """
+    
     if not isinstance(text, str):
         return ""
 
